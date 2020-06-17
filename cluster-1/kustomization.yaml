@@ -1,0 +1,3 @@
+resources:
+  - ../subtenant-2/*.yaml
+  - ../subtenant-4/*.yaml

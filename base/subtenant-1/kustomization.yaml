@@ -1,0 +1,5 @@
+resources:
+  - namespace-1.yaml
+  - namespace-2.yaml
+  - namespace-3.yaml
+

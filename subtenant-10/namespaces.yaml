@@ -1,6 +1,0 @@
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: subtenant-10-namespace-1
----

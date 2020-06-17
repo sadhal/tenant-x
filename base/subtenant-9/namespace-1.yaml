@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: subtenant-9-namespace-1
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: subtenant-9-namespace-1
+spec:
+  hard:
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "16"
+    limits.memory: 64Gi
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: subtenant-9-namespace-1
+spec:
+  limits:
+  - default:
+      memory: 1024Mi
+      cpu: 2000m
+    defaultRequest:
+      memory: 16Mi
+      cpu: 5m
+    type: Container

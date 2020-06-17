@@ -1,4 +1,5 @@
 resources:
-  - ../subtenant-1/namespace-1.yaml
-  - ../subtenant-1/namespace-2.yaml
-  - ../subtenant-1/namespace-3.yaml
+  - ../subtenant-1/namespaces.yaml
+  # - ../subtenant-1/namespace-1.yaml
+  # - ../subtenant-1/namespace-2.yaml
+  # - ../subtenant-1/namespace-3.yaml

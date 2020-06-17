@@ -1,0 +1,4 @@
+resources:
+  - ../subtenant-5/namespaces.yaml
+  - ../subtenant-7/namespaces.yaml
+  - ../subtenant-10/namespaces.yaml

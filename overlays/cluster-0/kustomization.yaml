@@ -1,3 +1,4 @@
 bases:
+  - ../../base/argocd
   - ../../base/subtenant-1
   - ../../base/subtenant-3

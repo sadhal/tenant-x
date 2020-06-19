@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: xyz-service
+  namespace: argocd
+spec:
+  destination:
+    namespace: subtenant-3-namespace-1
+    server: 'https://kubernetes.default.svc'
+  project: subtenant-1
+  source:
+    path: workloads/api-gw-tenant1
+    repoURL: 'https://github.com/sadhal/multi-tenancy-team0-api-gw'
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: subtenant-3
+  namespace: argocd
+spec:
+  description: applications for subtenant-3
+  destinations:
+    - namespace: subtenant-3-namespace-1
+      server: 'https://kubernetes.default.svc'
+  roles:
+    - description: some description of role for my CICD jobs
+      groups:
+        - mycicd
+      name: subtenant-3-role-cicd
+      policies:
+        - >-
+          p, proj:subtenant-3:subtenant-3-role-1, applications, sync,
+          subtenant-3/*, allow
+  sourceRepos:
+    - 'git@github.com:sadhal/api-gw-subtenant.git'
+    - 'https://github.com/sadhal/multi-tenancy-team0-api-gw'

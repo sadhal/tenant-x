@@ -20,12 +20,12 @@ spec:
       p, role:subtenant-1-admin, clusters, get, *, allow
       p, role:subtenant-1-admin, repositories, get, *, allow
 
-      p, role:subtenant-2-admin, applications, *, subtenant-2/*, allow
-      p, role:subtenant-2-admin, clusters, get, *, allow
-      p, role:subtenant-2-admin, repositories, get, *, allow
+      p, role:subtenant-3-admin, applications, *, subtenant-3/*, allow
+      p, role:subtenant-3-admin, clusters, get, *, allow
+      p, role:subtenant-3-admin, repositories, get, *, allow
 
       g, mygroup1, role:subtenant-1-admin
-      g, mygroup2, role:subtenant-2-admin
+      g, mygroup3, role:subtenant-3-admin
       g, mysupergroup, role:admin
       g, system:cluster-admins, role:admin
     scopes: '[groups]'

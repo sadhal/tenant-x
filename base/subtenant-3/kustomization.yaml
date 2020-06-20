@@ -1,3 +1,4 @@
 resources:
   - appproject.yaml
   - namespace-1/namespace.yaml
+  - namespace-1/application-xyz.yaml

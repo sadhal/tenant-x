@@ -1,7 +1,8 @@
 resources:
   - appproject.yaml
   - namespace-1/namespace.yaml
-  - namespace-2/namespace.yaml
   - namespace-2/application-abc.yaml
+  - namespace-2/namespace.yaml
+  - namespace-2/application-def.yaml
   - namespace-3/namespace.yaml
 

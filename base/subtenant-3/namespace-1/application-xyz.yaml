@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: subtenant-3-namespace-1
     server: 'https://kubernetes.default.svc'
-  project: subtenant-1
+  project: subtenant-3
   source:
     path: workloads/api-gw-tenant1
     repoURL: 'https://github.com/sadhal/multi-tenancy-team0-api-gw'

@@ -32,5 +32,5 @@ spec:
     - type: git
       url: https://github.com/sadhal/multi-tenancy-team0-api-gw
     - type: git
-      url: https://github.com/sadhal/tenant-x
+      url: https://github.com/sadhal/subtenant-1
 

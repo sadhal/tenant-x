@@ -9,8 +9,8 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: subtenant-1
   source:
-    path: workloads/api-gw-tenant1
-    repoURL: 'https://github.com/sadhal/multi-tenancy-team0-api-gw'
+    path: workloads/namespace-1/app-1
+    repoURL: 'https://github.com/sadhal/subtenant-1'
     targetRevision: HEAD
   syncPolicy:
     automated:

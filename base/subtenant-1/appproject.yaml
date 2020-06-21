@@ -22,5 +22,5 @@ spec:
           p, proj:subtenant-1:subtenant-1-role-1, applications, sync,
           subtenant-1/*, allow
   sourceRepos:
-    - 'git@github.com:sadhal/api-gw-subtenant.git'
+    - 'https://github.com/sadhal/subtenant-1'
     - 'https://github.com/sadhal/multi-tenancy-team0-api-gw'

@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: xyz-service
+  name: ns-1-app-1
   namespace: argocd
 spec:
   destination:
-    namespace: subtenant-3-namespace-1
+    namespace: subtenant-1-namespace-1
     server: 'https://kubernetes.default.svc'
-  project: subtenant-3
+  project: subtenant-1
   source:
-    path: workloads/api-gw-tenant1
-    repoURL: 'https://github.com/sadhal/multi-tenancy-team0-api-gw'
+    path: workloads/namespace-1/app-1
+    repoURL: 'https://github.com/sadhal/subtenant-1'
     targetRevision: HEAD
   syncPolicy:
     automated:

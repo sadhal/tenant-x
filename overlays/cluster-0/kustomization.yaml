@@ -1,4 +1,3 @@
 bases:
-  - ../../base/argocd/cluster-0
   - ../../base/subtenant-1
   - ../../base/subtenant-3

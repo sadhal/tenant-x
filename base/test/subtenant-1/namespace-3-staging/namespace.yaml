@@ -2,13 +2,13 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: subtenant-1-namespace-3
+  name: subtenant-1-namespace-3-staging
 ---
 apiVersion: v1
 kind: ResourceQuota
 metadata:
-  name: subtenant-1-namespace-3
-  namespace: subtenant-1-namespace-3
+  name: subtenant-1-namespace-3-staging
+  namespace: subtenant-1-namespace-3-staging
 spec:
   hard:
     requests.cpu: "1"

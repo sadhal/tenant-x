@@ -4,6 +4,8 @@
 
 TODO:
 
+## install gitops tools and workloads with argocd
+
 ### install argocd
 
 ```bash
@@ -11,19 +13,38 @@ kubectl create namespace argocd
 ```
 
 Install argocd-operator into argocd namespace from OperatorHub in new cluster.  
-New instance of ArgoCD from installed operator will be created by `k8s-reconsiler`.  
+Install new ArgoCD instance from operator using ArgoCD manifest for given cluster in this repository.  
 
-### install namespace reconciler
+Update RBAC for `argocd-application-controller` so it can apply changes.  
 
-Follow instructions in https://github.com/sadhal/ns-reconciler with newly created cluster's name.  
-`k8s-reconciler` pointing to this repository will use cluster's kustomization.yaml found in [overlays](overlays/). Overlay kustomization will point out [bases](bases/). Bases have own kustomization.yaml which includes resources that will be created eg. `Namespace`s, `LimitRange`s and `ResourceQuota`s.
+```bash
+cat <<EOF | kubectl create -f - 
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: argocd-application-controller-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: argocd-application-controller
+  namespace: argocd
+EOF
+```
 
-`k8s-reconciler` pointing to [tenant-x-argocd](https://github.com/sadhal/tenant-x-argocd) repository will use cluster's kustomization.yaml found in [overlays](overlays/). Overlay kustomization will point out [bases](bases/). Bases have own kustomization.yaml which includes ArgoCD resources that will be created eg. `ArgoCD`, `Appproject`s and `Applications`s.  
+### create namespaces with ArgoCD application
 
-#### setup ArgoCD projects
+Install ArgoCD Application, responsible for creating namespaces, from this repository using declarative style.  
+Create ArgoCD Application with manifest `argocd-application-namespaces.yaml` for given cluster in this repository.  
 
-`k8s-reconciler` does that automatically. Changes done to ArgoCD projects need to be commited to GitHub. Pull Request to [tenant-x-argocd](https://github.com/sadhal/tenant-x-argocd) repository have to be used for that purpose.  
+### create AppProjects with ArgoCD application
 
-#### setup ArgoCD applications
+Install ArgoCD Application, responsible for creating AppProjects, from this repository using declarative style.  
+Create ArgoCD Application with manifest `argocd-application-argocd-projects.yaml` for given cluster in this repository.  
 
-`k8s-reconciler` does that automatically. Changes done to ArgoCD projects need to be commited to GitHub. Pull Request to [tenant-x-argocd](https://github.com/sadhal/tenant-x-argocd) repository have to be used for that purpose.  
+`AppProjects` and `Applications` for subtenants workloads are stored in GitHub. Pull Request to [tenant-x-argocd](https://github.com/sadhal/tenant-x-argocd) repository have to be used for changing their manifest files which are synced back to ArgoCD.  
+Only workloads in `staging` and `production` environments are handled with ArgoCD as GitOps tool. Other environments are handled by each subtenant either through pipelines or manually.  
+
+Manifest files and/or helm charts repos for workloads are under version control for each subtenant in one config repo, eg [subtenant-1](https://github.com/sadhal/subtenant-1) repository.  

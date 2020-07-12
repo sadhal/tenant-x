@@ -1,0 +1,4 @@
+resources:
+  - namespace-1-staging/namespace.yaml
+  - namespace-2-staging/namespace.yaml
+  - namespace-3-staging/namespace.yaml

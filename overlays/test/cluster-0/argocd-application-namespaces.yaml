@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: namespace-reconciler-cluster-0
+  namespace: argocd
+spec:
+  destination:
+    namespace: '*'
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    path: overlays/test/cluster-0/
+    repoURL: 'https://github.com/sadhal/tenant-x'
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

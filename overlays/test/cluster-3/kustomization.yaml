@@ -1,0 +1,5 @@
+bases:
+  - ../../base/test/subtenant-3
+  - ../../base/test/subtenant-6
+  - ../../base/test/subtenant-8
+  - ../../base/test/subtenant-9

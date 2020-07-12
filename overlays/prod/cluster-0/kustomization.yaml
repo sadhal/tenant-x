@@ -1,0 +1,3 @@
+bases:
+  - ../../base/prod/subtenant-1
+  - ../../base/prod/subtenant-3

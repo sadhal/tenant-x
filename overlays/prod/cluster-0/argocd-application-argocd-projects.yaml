@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    path: overlays/cluster-0/
+    path: overlays/prod/cluster-0/
     repoURL: 'https://github.com/sadhal/tenant-x-argocd'
     targetRevision: master
   syncPolicy:

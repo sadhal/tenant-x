@@ -1,5 +1,5 @@
 resources:
-  # - namespace-1/namespace.yaml
+  - namespace-1/namespace.yaml
   - namespace-2/namespace.yaml
   - namespace-3/namespace.yaml
 

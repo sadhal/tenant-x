@@ -13,7 +13,7 @@ kubectl create namespace argocd
 ```
 
 Install argocd-operator into argocd namespace from OperatorHub in new cluster.  
-Install new ArgoCD instance from operator using ArgoCD manifest for given cluster in this repository.  
+Install new ArgoCD instance from operator using ArgoCD manifest `argocd.yaml` for given cluster in this repository.  
 
 Update RBAC for `argocd-application-controller` so it can apply changes.  
 

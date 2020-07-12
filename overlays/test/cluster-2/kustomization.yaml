@@ -1,4 +1,4 @@
 bases:
-  - ../../base/test/subtenant-5
-  - ../../base/test/subtenant-7
-  - ../../base/test/subtenant-10
+  - ../../../base/test/subtenant-5
+  - ../../../base/test/subtenant-7
+  - ../../../base/test/subtenant-10

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: namespace-reconciler-cluster-0
+  name: argocd-projects-reconciler-cluster-0
   namespace: argocd
 spec:
   destination:
@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: overlays/cluster-0/
-    repoURL: 'https://github.com/sadhal/tenant-x'
+    repoURL: 'https://github.com/sadhal/tenant-x-argocd'
     targetRevision: master
   syncPolicy:
     automated:
